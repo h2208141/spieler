@@ -1,5 +1,4 @@
 Starten: node app.js
 
-Spielerliste: http://localhost:3000/spielerliste
-(da kommt json zurück)
+Browser: http://localhost:3000/
 
