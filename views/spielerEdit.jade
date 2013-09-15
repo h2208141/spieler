@@ -1,0 +1,30 @@
+//
+   Created with JetBrains WebStorm.
+   User: awunnenb
+   Date: 15.09.13
+   Time: 15:58
+   To change this template use File | Settings | File Templates.
+
+extends layout
+
+block content
+    h1= "Spieler bearbeiten"
+    div.divspieler
+        form( method="post")
+            input(name="_id", type="hidden", value=spieler._id.toHexString())
+            div
+                div
+                    span.label Nachname :
+                    input(type="text", name="nachname", id="edtSpielerNachname", value=spieler.nachname)
+                div
+                    span.label Name :
+                    input(type="text", name="name", id="edtSpielerName", value=spieler.name)
+                div
+                    span.label Alter :
+                    input(type="text", name="age", id="edtSpielerAge", value=spieler.age)
+
+                div#editSpielerSubmit
+                    input(type="submit", value="Speichern")
+
+                a(href="/spielerliste")!= "zurück zur Spielerliste"
+

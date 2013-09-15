@@ -1,0 +1,20 @@
+extends layout
+
+block content
+    h1= Spielerliste
+    #employees
+        - each spieler in spielerliste
+            div.divspieler
+                div.nachname= spieler.nachname
+                div.name= spieler.name
+                div.age= spieler.age
+                form( method="post", action="/spielerliste/"+spieler._id.toHexString())
+                    input(type="hidden" name="_method" value="delete")
+                    input(id="delete", value="Löschen", type="submit")
+                form( method="get", action="/spielerliste/"+spieler._id.toHexString())
+                    input(id="edit", value="Bearbeiten", type="submit")
+                br
+        a(href="/spielerneu")!= "Spieler neu anlegen"
+
+
+

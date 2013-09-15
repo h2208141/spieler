@@ -1,7 +1,6 @@
 var express = require('express');
 var routes = require('./routes');
-var user = require('./routes/user');
-var spieler = require('./routes/spieler');
+var spielerController = require('./routes/spielerController');
 var http = require('http');
 var path = require('path');
 
@@ -23,13 +22,10 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-var SpielerManager = require('./routes/spieler').SpielerManager;
+var SpielerManager = require('./routes/spielerController').SpielerManager;
 var spielerManagerService = new SpielerManager(app);
 
 app.get('/', routes.index);
-app.get('/users', user.list);
-// app.get('/spieler', spieler.list);
-
 
 // development only
 if ('development' == app.get('env')) {

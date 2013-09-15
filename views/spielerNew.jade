@@ -1,0 +1,29 @@
+//
+   Created with JetBrains WebStorm.
+   User: awunnenb
+   Date: 15.09.13
+   Time: 15:58
+   To change this template use File | Settings | File Templates.
+
+extends layout
+
+block content
+    h1= "Spieler neu anlegen"
+    div.divspieler
+        form( method="post")
+            div
+                div
+                    span.label Nachname :
+                    input(type="text", name="nachname", id="edtSpielerNachname")
+                div
+                    span.label Name :
+                    input(type="text", name="name", id="edtSpielerName")
+                div
+                    span.label Alter :
+                    input(type="text", name="age", id="edtSpielerAge")
+
+                div#editSpielerSubmit
+                    input(type="submit", value="Speichern")
+
+                a(href="/spielerliste")!= "zurück zur Spielerliste"
+
